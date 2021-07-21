@@ -1,32 +1,36 @@
 
 import React from 'react';
-// import Counter from './components/Counter/Counter';
-// import Dropdawn  from './components/Dropdawn/Dropdawn';
-// import ColorPicker from './components/ColorPicker/ColorPicker'
-// import Feedback from './components/Feedback';
 import FeedbackCounter from './components/FeedbackCounter';
+import Statistics from './components/Statistics/Statisticks';
 // import Controls  from './components/Counter';
 
-// const colorPickerOptions = [
-//     { label: 'red', color: '#F44336' },
-//     { label: 'green', color: '#4CAF50' },
-//     { label: 'blue', color: '#2196F3' },
-//     { label: 'grey', color: '#607D8B' },
-//     { label: 'pink', color: '#E91E63' },
-//     { label: 'indigo', color: '#3F51B5' }
+class App extends React.Component {
+    state = {
+        good: 0,
+        neutral: 0,
+        bad: 0
+    }    
+   
+   handleBtnClick = event => {
+        const { name } = event.target;
+        this.setState(prevState => ({
+            [name]: prevState[name] + 1,
+        }));
+    };
     
-// ]
-
-const App = () => (
-    <>
+    render() {
+        return (
+            <>
         <h1>Please leave feedback</h1>
-        {/* <Counter initialValue={10}/> */}
-        {/* <ColorPicker options={colorPickerOptions} /> */}
-        {/* <Dropdawn /> */}
-        {/* <Controls /> */}
-        <FeedbackCounter />
         
+        <Statistics
+            good={good}
+            neutral={neutral}
+            bad={bad} />
+        <FeedbackCounter /> 
     </>
-)
-
+        )
+    }
+}
 export default App;
+    
