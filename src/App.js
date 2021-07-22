@@ -19,6 +19,7 @@ class App extends React.Component {
     };
     
     render() {
+        const { good, neutral, bad } = this.state;
         return (
             <>
         <h1>Please leave feedback</h1>
@@ -27,8 +28,8 @@ class App extends React.Component {
             good={good}
             neutral={neutral}
             bad={bad} />
-        <FeedbackCounter /> 
-    </>
+        <FeedbackCounter buttons={this.state }  />
+            </>
         )
     }
 }

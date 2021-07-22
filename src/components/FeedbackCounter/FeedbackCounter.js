@@ -3,17 +3,19 @@ import style from './FeedbackCounter.module.css'
 import Controls from '../Counter'
 // import PropTypes from 'prop-types'
 
-const FeedbackCounter = () => (
-    render() {
+const FeedbackCounter = () => {
+    // const { good, neutral, bad } = this.state;
+    
         return (
             <div className={style.FeedbackCounter}>
-                <span className={style.FeedbackCounter__value}>{this.state.value}</span>
+                {/* <span className={style.FeedbackCounter__value}>{this.state.value}</span> */}
                 <Controls
-                    good={this.good}
-                    neutral={this.neutral}
-                    bad={this.bad}/>
+                    good={this.state.good}
+                    neutral={this.state.neutral}
+                    bad={this.state.bad} />
             </div>
-        )}
-)
+        )
+    
+}
 
 export default FeedbackCounter;
